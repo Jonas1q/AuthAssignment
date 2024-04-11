@@ -6,10 +6,12 @@ In this project, we're building a backend system for a news site. The system inc
 ## Policy ##
 The implemented authorization system enforces the following policies:
 
-Editor: Can edit and delete articles, edit and delete user comments.
-Writer / Journalist: Can create and edit their own articles.
-Subscriber / Registered User: Can comment on articles.
-Guest / Public User: Can read articles.
+| Role                     | Permissions                                        |
+|--------------------------|----------------------------------------------------|
+| Editor| Edit and delete articles<br>Edit and delete user comments  |
+| Journalist | Create and edit their own articles|
+| Subscriber / Registered User | Can comment on articles|
+| Guest / Public User| Can read articles|
 
 ## Schema ##
 The database schema used in this project is as follows:
