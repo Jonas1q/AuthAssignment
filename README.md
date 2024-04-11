@@ -13,23 +13,23 @@ Guest / Public User: Can read articles.
 
 ## Schema ##
 The database schema used in this project is as follows:
-code(
-CREATE TABLE IF NOT EXISTS users (
+
+`CREATE TABLE IF NOT EXISTS users (
     user_id INTEGER PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
     password_hash TEXT NOT NULL
-);
+);`
 
-CREATE TABLE IF NOT EXISTS articles (
+`CREATE TABLE IF NOT EXISTS articles (
     article_id INTEGER PRIMARY KEY,
     title TEXT NOT NULL,
     content TEXT NOT NULL,
     author_id INTEGER NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (author_id) REFERENCES users(user_id) ON DELETE CASCADE
-);
+);`
 
-CREATE TABLE IF NOT EXISTS comments (
+`CREATE TABLE IF NOT EXISTS comments (
     comment_id INTEGER PRIMARY KEY,
     content TEXT NOT NULL,
     article_id INTEGER NOT NULL,
@@ -37,8 +37,7 @@ CREATE TABLE IF NOT EXISTS comments (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (article_id) REFERENCES articles(article_id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
-);
-)
+);`
 
 ## Deliverable ##
 
@@ -50,14 +49,13 @@ JournalistUser  | JournalistPassword
 RegisteredUser | RegisteredPassword
 
 Here's a step by step for a journalist user:
-1. Login using the code(/login) endpoint. The server will return a JWT token, you will need this to reach different endpoints so keep save it.
-2. Use the code(/createArticle) endpoint to create an article, you will need to pass the following to successfully create an article code({
+1. Login using the `/login` endpoint. The server will return a JWT token, you will need this to reach different endpoints so keep save it.
+2. Use the `/createArticle` endpoint to create an article, you will need to pass the following to successfully create an article `{
   "articleId": 0,
   "title": "title",
   "content": "content"
-
-})
-3. After creating an article use code(/getArticle) followed by code(?articleId={}) to grab your desired article.
+}`
+3. After creating an article use `/getArticle` followed by `?articleId={}` to grab your desired article.
 4. Success.
 
 To get started, follow these steps:
