@@ -51,8 +51,8 @@ JournalistUser  | JournalistPassword
 RegisteredUser | RegisteredPassword
 
 Here's a step by step for a journalist user:
-1. Login using the `/login` endpoint. The server will return a JWT token, you will need this to reach different endpoints so keep save it.
-2. Use the `/createArticle` endpoint to create an article, you will need to pass the following to successfully create an article
+1. Login using the `/login` endpoint. The server will return a JWT token, you will need this to reach different endpoints so save it.
+2. Use the `/createArticle` endpoint to create an article, you will need to pass the following to successfully create an article:
 `{
   "articleId": 0,
   "title": "title",
