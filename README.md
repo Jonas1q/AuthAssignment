@@ -16,7 +16,8 @@ The implemented authorization system enforces the following policies:
 ## Schema ##
 The database schema used in this project is as follows:
 
-`CREATE TABLE IF NOT EXISTS users (
+```sql
+CREATE TABLE IF NOT EXISTS users (
     user_id INTEGER PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
     password_hash TEXT NOT NULL
@@ -39,7 +40,8 @@ The database schema used in this project is as follows:
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (article_id) REFERENCES articles(article_id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
-);`
+);
+```
 
 ## Deliverable ##
 
